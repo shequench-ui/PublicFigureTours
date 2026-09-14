@@ -82,7 +82,6 @@
             height: 60px; /* Increased from 42px to 60px */
             width: auto; 
             transition: transform 0.3s ease;
-            /* Removed the drop-shadow completely */
         }
         .logo:hover img { transform: scale(1.02); }
 
@@ -215,6 +214,7 @@
         .why-choose { padding: 60px 5% 80px; background: var(--bg-main); transition: background 0.3s; }
         .why-choose h2 { font-size: 2.5rem; text-align: center; margin-bottom: 60px; }
         .reasons-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .reason-item { display: flex; flex-direction: column; }
         .reason-item i { font-size: 2.5rem; color: var(--pft-gold); margin-bottom: 20px; display: block; }
         .reason-item h4 { font-size: 1.2rem; margin-bottom: 15px; font-weight: 700; }
         .reason-item p { color: var(--text-muted); font-size: 1rem; line-height: 1.6; }
@@ -351,7 +351,7 @@
             .nav-link { display: none; }
             
             /* Logo resizing for mobile */
-            .logo img { height: 45px; } /* Increased mobile size as requested */
+            .logo img { height: 45px; } 
 
             .btn-header.hamburger-btn { display: block; }
             
@@ -372,10 +372,18 @@
             .feature-card-content h3 { font-size: 1.5rem; margin-bottom: 10px; }
             .feature-card-content p { font-size: 0.9rem; margin-bottom: 15px; }
 
-            .why-choose { padding: 40px 15px 60px; }
-            .why-choose h2 { font-size: 2rem; margin-bottom: 40px; text-align: left; }
+            /* REDESIGNED MOBILE WHY CHOOSE US (No Pills, Just Side-by-Side Content) */
+            .why-choose { padding: 40px 15px 50px; }
+            .why-choose h2 { font-size: 1.8rem; margin-bottom: 30px; text-align: left; }
             .reasons-grid { grid-template-columns: 1fr; gap: 30px; }
-            .reason-item h4 { font-size: 1.2rem; }
+            
+            .reason-item { 
+                display: flex; flex-direction: row; align-items: flex-start; gap: 20px; 
+            }
+            .reason-item i { font-size: 2rem; margin-bottom: 0; margin-top: 2px; width: 35px; text-align: center; }
+            .reason-item-content { flex: 1; }
+            .reason-item h4 { font-size: 1.1rem; margin-bottom: 5px; }
+            .reason-item p { font-size: 0.9rem; line-height: 1.5; margin-bottom: 0; }
             
             .fleet-section { padding: 50px 15px; }
             .fleet-tabs-container { margin-bottom: 30px; }
@@ -576,18 +584,24 @@
         <div class="reasons-grid">
             <div class="reason-item">
                 <i class="fa-solid fa-crown"></i>
-                <h4>VIP Treatment, Every Time.</h4>
-                <p>Every passenger deserves to feel valued. We bring the red-carpet mindset to every journey.</p>
+                <div class="reason-item-content">
+                    <h4>VIP Treatment, Every Time.</h4>
+                    <p>Every passenger deserves to feel valued. We bring the red-carpet mindset to every journey.</p>
+                </div>
             </div>
             <div class="reason-item">
                 <i class="fa-solid fa-clock-rotate-left"></i>
-                <h4>On Time, Every Time.</h4>
-                <p>We respect your time. Our commitment to reliability is reflected in our customer satisfaction.</p>
+                <div class="reason-item-content">
+                    <h4>On Time, Every Time.</h4>
+                    <p>We respect your time. Our commitment to reliability is reflected in our customer satisfaction.</p>
+                </div>
             </div>
             <div class="reason-item">
                 <i class="fa-solid fa-umbrella-beach"></i>
-                <h4>Pure Jamaican Vibes.</h4>
-                <p>Authentic Jamaican hospitality, culture and island energy are part of the experience.</p>
+                <div class="reason-item-content">
+                    <h4>Pure Jamaican Vibes.</h4>
+                    <p>Authentic Jamaican hospitality, culture and island energy are part of the experience.</p>
+                </div>
             </div>
         </div>
     </section>
